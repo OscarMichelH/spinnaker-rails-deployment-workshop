@@ -1,0 +1,35 @@
+version: "3"
+
+volumes:
+  db-data:
+    external: false
+  gem_cache:
+  shared_data:
+
+services:
+  db:
+    image: postgres:15.1-alpine
+    env_file:
+      - config/application.yml
+    volumes:
+      - db-data:/usr/local/pgsql/data
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cdcon
+    volumes:
+      - .:/var/app
+      - shared_data:/var/shared
+      - gem_cache:/usr/local/bundle/gems
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+    env_file:
+      - config/application.yml
+    entrypoint: entrypoint.sh
+    command: ['rails', 's', '-p', '3000', '-b', '0.0.0.0']

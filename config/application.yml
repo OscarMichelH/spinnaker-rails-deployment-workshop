@@ -1,0 +1,11 @@
+RACK_ENV: development
+RAILS_ENV: development
+RAILS_LOG_TO_STDOUT: "true"
+RAILS_SERVE_STATIC_FILES: "true"
+SECRET_KEY_BASE: "db6386e657b69d107f538cc8f94e6b28fc20323941248f1d347b3630b7df3e1429f2009a3c65ebe85d6c916c16f7f279cabd14abe86b5be597d24ebcd115301e"
+POSTGRES_DB: "cdcon_production"
+DATABASE_USER: "postgres"
+DATABASE_PASSWORD: "root"
+DATABASE_URL: postgres://postgres:root@localhost:5432/cdcon_development
+POSTGRES_HOST_AUTH_METHOD: "trust"
+DATABASE_PORT: "5432"

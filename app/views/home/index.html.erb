@@ -1,0 +1,20 @@
+ <title>Welcome to CDCon</title>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome to CDCon</h1>
+    <p class="lead">
+      CDCon is the premier conference for developers and software engineers
+      who are passionate about continuous delivery and DevOps.
+    </p>
+  </div>
+  <div class="row">
+      <% @posts.each do |post| %>
+        <div class="col-4 card">
+
+          <%= render post %>
+        </div>
+      <% end %>
+  </div>
+  <br>
+  <%= link_to "New post", new_post_path, class: 'btn btn-secondary' %>
+</div>

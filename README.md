@@ -1,6 +1,6 @@
-# k8s-raills-deployment
+# k8s-rails-deployment
 
-This repository contains reference files to allow us deploy a Rails application in a k8s cluster using docker/compose.
+This repository contains reference files to allow us deploy a Rails application in a k8s cluster using docker/compose, and finally use the resources to manage our deployment from spinnaker.
 
 ## Requirements
 - Upload your image to docker hub or other provider to pull and mount image in a deployment resource inside our cluster

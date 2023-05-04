@@ -4,7 +4,7 @@ metadata:
   name: db
 spec:
   ports:
-    - name: "5432"
+    - name: '5432'
       port: 5432
       targetPort: 5432
   selector:

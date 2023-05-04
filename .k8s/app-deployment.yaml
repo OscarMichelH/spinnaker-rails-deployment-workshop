@@ -16,12 +16,12 @@ spec:
         - args:
             - rails
             - s
-            - -p
-            - "3000"
-            - -b
+            - '-p'
+            - '3000'
+            - '-b'
             - 0.0.0.0
           command:
-            - dev-entrypoint.sh
+            - entrypoint.sh
           env:
             - name: DATABASE_PASSWORD
               valueFrom:
@@ -78,23 +78,8 @@ spec:
                 configMapKeyRef:
                   key: SECRET_KEY_BASE
                   name: env-secrets
-            - name: SMTP_USERNAME
-              valueFrom:
-                configMapKeyRef:
-                  key: SMTP_USERNAME
-                  name: env-secrets
-            - name: SMTP_PASSWORD
-              valueFrom:
-                configMapKeyRef:
-                  key: SMTP_PASSWORD
-                  name: env-secrets
-            - name: SMTP_SERVER
-              valueFrom:
-                configMapKeyRef:
-                  key: SMTP_SERVER
-                  name: env-secrets
-          image: <YOUR_DOCKER_IMAGE>
-          name: <YOUR_APP_NAME>
+          image: '${parameters.version}'
+          name: app
           ports:
             - containerPort: 3000
           resources: {}

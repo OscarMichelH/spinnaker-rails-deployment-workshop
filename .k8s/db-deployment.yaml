@@ -71,7 +71,7 @@ spec:
                 configMapKeyRef:
                   key: SECRET_KEY_BASE
                   name: env-secrets
-          image: postgres:15.1-alpine
+          image: 'postgres:15.1-alpine'
           name: db
           ports:
             - containerPort: 5432
@@ -83,4 +83,4 @@ spec:
       volumes:
         - name: db-data
           persistentVolumeClaim:
-            claimName: db-data
+            claimName: minio-pvc

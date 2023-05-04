@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app
+  name: '${parameters.app_name}'
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app
+      app: '${parameters.app_name}'
   template:
     metadata:
       labels:
-        app: app
+        app: '${parameters.app_name}'
     spec:
       containers:
         - args:
@@ -79,7 +79,7 @@ spec:
                   key: SECRET_KEY_BASE
                   name: env-secrets
           image: '${parameters.version}'
-          name: app
+          name: '${parameters.app_name}'
           ports:
             - containerPort: 3000
           resources: {}

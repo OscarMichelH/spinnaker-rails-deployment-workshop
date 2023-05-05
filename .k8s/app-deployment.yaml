@@ -78,7 +78,7 @@ spec:
                 configMapKeyRef:
                   key: SECRET_KEY_BASE
                   name: env-secrets
-          image: '${parameters.version}'
+          image: 'oscarmichelh/cdcon:${parameters.version}'
           name: '${parameters.app_name}'
           ports:
             - containerPort: 3000
